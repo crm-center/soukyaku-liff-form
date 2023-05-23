@@ -87,12 +87,10 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const udetate = $('input[name="udetate"]').val();
-                const fukkin  = $('input[name="fukkin"]').val();
-                const haikin  = $('input[name="haikin"]').val();
-                const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const from_store    = $('[name=from_store]').val();
+                const to_store = $('[name=to_store]').val();
+                const soukyaku_num  = $('[name=soukyaku_num]').val();
+                const msg = `送客：\n${from_store}\n${to_store}\n${soukyaku_num}`;
                 sendText(msg);
                 return false;
             });
