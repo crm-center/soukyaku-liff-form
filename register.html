@@ -81,7 +81,7 @@
         $(function () {
             $('form').submit(function () {
                 const name = $('[name=name]').val();
-                const store    = $('[name=store]').val();
+                const store = $('[name=store]').val();
                 const msg = `会員登録：\n${name}\n${store}`;
                 sendText(msg);
                 return false;
