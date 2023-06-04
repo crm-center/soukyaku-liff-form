@@ -80,9 +80,9 @@
 
         $(function () {
             $('form').submit(function () {
-                const store    = $('[name=from_store]').val();
                 const name = $('[name=name]').val();
-                const msg = `会員登録：\n${store}\n${name}`;
+                const store    = $('[name=store]').val();
+                const msg = `会員登録：\n${name}\n${store}`;
                 sendText(msg);
                 return false;
             });
