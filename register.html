@@ -98,27 +98,15 @@
             });
         }
 
-        function sendText() {
-
+        function sendText(msg) {
             liff.sendMessages([{
-              type: 'text',
-              text: 'ユーザー登録ありがとうございました。こちらから来店できます。'
-            }, {
-              type: 'text',
-              text: 'https://app.gather.town/app/5iDlcky55rTLPzWO/Space_Test?openExternalBrowser=1'
+                'type': 'text',
+                'text': text
             }]).then(function () {
                 liff.closeWindow();
             }).catch(function (error) {
                 window.alert('Failed to send message ' + error);
             });
-            // liff.sendMessages([{
-            //     'type': 'text',
-            //     'text': text
-            // }]).then(function () {
-            //     liff.closeWindow();
-            // }).catch(function (error) {
-            //     window.alert('Failed to send message ' + error);
-            // });
         }
 
         const params = (new URL(document.location)).searchParams;
@@ -128,9 +116,8 @@
             $('form').submit(function () {
                 const name = $('[name=name]').val();
                 const store = $('[name=store]').val();
-                sendText();
-                // const msg = `会員登録：\n${name}\n${store}`;
-                // sendText(msg);
+                const msg = `会員登録：\n${name}\n${store}`;
+                sendText(msg);
                 return false;
             });
         });
